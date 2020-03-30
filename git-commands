@@ -7,3 +7,4 @@ git status  ---> to check the status of the directory
 git add . --->this will include all the files to be commited in the git can also give perticular file name
 git commit --->commit the changes to the git repository
 git commit -m "asdf" ---> -m is for the message and it is written in the brackets
+git log --oneline  ---> it is used to show the logs of all commits
