@@ -8,3 +8,9 @@ git add . --->this will include all the files to be commited in the git can also
 git commit --->commit the changes to the git repository
 git commit -m "asdf" ---> -m is for the message and it is written in the brackets
 git log --oneline  ---> it is used to show the logs of all commits
+git checkout commitcode filename ---> this is used to rollback to the previous place
+git reset HEAD filename --->
+git restore filename ---->to retrieve back
+
+
+git push ---> the push command is used to upload the lcoal repository code to the remote repository
