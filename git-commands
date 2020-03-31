@@ -13,4 +13,5 @@ git reset HEAD filename --->
 git restore filename ---->to retrieve back
 
 git remote add origin url ----> to add the repositoryto a remote repository
-git push -u origin master// git push --force origin master---> the push command is used to upload the lcoal repository code to the remote repository
+git push -u oririn master// git push --force origin master---> the push command is used to upload the lcoal repository code to the remote repository
+git clone repository url ---. is used to clone the repositoryfrom remote to local
