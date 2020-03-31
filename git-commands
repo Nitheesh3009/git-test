@@ -12,5 +12,5 @@ git checkout commitcode filename ---> this is used to rollback to the previous p
 git reset HEAD filename --->
 git restore filename ---->to retrieve back
 
-
+git remote add origin url ----> to add the repositoryto a remote repository
 git push ---> the push command is used to upload the lcoal repository code to the remote repository
