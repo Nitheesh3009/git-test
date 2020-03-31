@@ -15,3 +15,16 @@ git restore filename ---->to retrieve back
 git remote add origin url ----> to add the repositoryto a remote repository
 git push -u oririn master// git push --force origin master---> the push command is used to upload the lcoal repository code to the remote repository
 git clone repository url ---. is used to clone the repositoryfrom remote to local
+creating a .gitignore folder and writing the files that we dont want to upload to remote then we use 
+this folder in the repositorys
+
+
+npm init ---> for installing packages.json file in folder
+npm install lite-server --save-dev ---> installing lite-server for development 
+for using lite-sever we have to first make the changes in the package.json file created while installing
+lite-server and the changes are in scripts 
+"scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite":"lite-server"
+  },
