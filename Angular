@@ -1,0 +1,905 @@
+javascript types
+A type is a particular data structure
+Built in types, can be used to build other data structures
+ JavaScript has seven built-in types, six primitive, and one object type
+ in JavaScript an object is nothing more than a collection of name/value pairs
+ 
+ primitive type is a type that represents a single, immutable value(not a object)
+ 1.Boolean(true or false)
+2.undefined(var=x; console.log(x);(this will return undefined))
+undefined and not defined are not the same in javascript
+3.null signifies the lack of value
+4.Number
+5. String('',"")
+6.symbol
+========================================
+things that are considered false in js
+false, null, undefied, "", 0, NaN.
+all true in js:
+true, "hello", 1, -1, "false"(string false)
+puttinh the curly brace on the same line is the best practice
+for eg: return{} if we write the curly brace in next line it  thinks that return is followed by ; so 
+======================================
+creating objects in js:
+var company = new Object();
+company.name = "asds";
+company.ceo = new Object();
+company.ceo.name = "mark";
+company["stock of company"]=110;
+console.log(company);
+console.log(company.ceo.name);
+console.log(["stock of company"]);
+. and [""] are used for displaying in java scrpt if a particular type is of more than one word then we use[""]
+
+creating objects Using Object Literal Syntax:
+// Better way: object literal
+var facebook = {
+  name: "Facebook",
+  ceo: {
+    firstName: "Mark",
+    favColor: "blue"
+  },
+  "stock of company": 110
+};
+
+console.log(facebook.ceo.firstName);
+===============================================
+
+funtions:
+functions are first class data types, they can be used as objects
+
+
+
+function multiply(x, y) {
+  return x * y;
+}
+multiply.version = "v.1.0.0";
+console.log(multiply.version);
+
+
+// Function factory
+function makeMultiplier(multiplier) {
+  var myFunc = function (x) {
+    return multiplier * x;
+  };
+
+  return myFunc;
+}
+
+var multiplyBy3 = makeMultiplier(3);
+console.log(multiplyBy3(10));
+var doubleAll = makeMultiplier(2);
+console.log(doubleAll(100));
+
+
+// Passing functions as arguments
+function doOperationOn(x, operation) {
+  return operation(x);
+}
+
+var result = doOperationOn(5, multiplyBy3);
+console.log(result);
+result = doOperationOn(100, doubleAll);
+console.log(result);
+=======================================================================
+
+passing variables by value and reference:
+In JavaScript, primitives are passed by value, and objects are passed by reference
+in pass by value the old value will not be affected by changing the new value, 
+In pass by reference the old value will be changed by changing the new value.
+
+==========================================================================
+
+
+ Function Constructors, prototype, and the 'this' Keyword:
+
+
+==============================================
+Document is a global object in js
+document.getElementById
+It is a instance of HTMLDocument
+
+to retrive the data from html document we use:
+document.getElementById("").value;
+to write it on the page we use:
+document.getElementById("").textContent = message;
+*message is a variable where the retrieved data is store*
+to retrive data instead of using getElementById we can also use
+querySelector and we have to give the selector i.e value of id with #
+// Unobtrusive event binding
+    document.querySelector("button")
+      .addEventListener("click", sayHello);
+In this type of event we use only the original we exclude on from the name
+
+================================================================
+
+Arrays:
+creation of array 
+var array1 = new Array();
+array1[0] = "asda";
+array1[1] = 2;
+array1[2] = function(name){
+ console.log("gefe" + name);
+};
+
+short hand array creation
+var array1 = ["asd", "asdasd", "qwerty"];
+
+displaying data of a obj 
+var myObj = {
+  name: "Yaakov",
+  course: "HTML/CSS/JS",
+  platform: "Courera"
+};
+for (var prop in myObj) {
+  console.log(prop + ": " + myObj[prop]);
+}
+===============================================================
+
+closures:
+
+
+Namespaces:
+// Immediately Invoked Function Expression
+// IIFE
+(function (name) {
+  console.log("Hello " + name);
+})("Coursera!");
+
+==========================================================================
+
+
+HTTP basics:
+Hyper Text transfer protocol
+it is stateless
+creating connection->http request to server-> http response to user-> connection ends
+
+URN : 	Uniform Resource name
+uniquely identify a resource or a name of a resource
+
+URI, and URI stands for Uniform Resource Identifier
+uniquely identifies a resource or a location of a resource.
+
+URL : Uniform Resource Locator
+
+HTTP request structure(GET)
+
+GET   /index.html?firstName = yaakov HTTP/1.1
+---    ---------- -----------------  ----------
+method  URI string  Query string     HTTP version
+
+HTTP response structure
+
+HTTP/1.1 200 OK
+-------- --- ----
+(HTTP version) (Response status code) (describing status code) 
+
+==============================================================================
+AJAX basics:
+
+Asyncronous javascript and XML
+
+
+
+
+JSON:
+ JSON stands for JavaScript Object Notation.
+ JSON is a lightweight data representation.
+ It's a great format for passing data from the server to the client,
+ The syntax of JSON is based on JavaScript object literal.
+ JSON is not a JavaScript object literal. It's just a string. 
+ JSON.parse will let you convert from JSON string to object. And 
+ JSON.stringify will let you convert from the object to the JSON string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ANGULAR
+
+Why javascript frameworks?
+
+
+library vs framework
+
+single page application	
+Model-View controller, model view view model / model view whatever(data binding, routing)
+scable, reusable, maintainable js code
+test driven develpoment
+
+Angular is most used js frame works
+It is a component-based
+mobile support
+server-side rendering
+powerful templates
+
+Structural framework for dynamic web applications
+
+
+
+
+===========================================
+
+
+
+
+npm install -g @angular/cli  //for installing angular cli
+npm -v or npm --version // to check the version of npm(node package manager)
+ng --version // to check the ng version
+
+ng new project-name // for creating a new project in angular
+ng serve or npm start // for executing the angular project
+
+installing angular material for ui templates npm install @angular/material@6.4.7 --save
+we should install cdk for material npm install @angular/cdk@6.4.7 --save
+we should also install animations module for better use  npm install @angular/animations@6.1.7 --save
+install hammerjs this is a library that is used to help with some gestures such as zoom, rotate npm install hammerjs@2.0.8 --save
+install angular flex-layout by npm install --save @angular/flex-layout@6.0.0-beta.18
+
+we should configrue our project in order to use material so we do that in index.html in the head
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+next we have to make changes in app.module.ts and import 
+BrowserAnimationsModule from angular/platform-browser/animations
+MatToolbarModule from angular/material/toolbar
+
+=========================================
+
+Angular Architecture:
+Angular is modular in nature, built of modules atleast one module i.e ROOT MODULE(appModule)
+Each module is made up of ccomponents and services
+component controls the view atleast one component Root Component(AppComponent)
+Each component has a html template that controls the view and a class that controls the logic of that view
+Services contain business logic 
+
+decelarations in ngmodule of app.module has the view(components, directives, pipes)
+providers has the services that are used
+ 
+ =========================================
+
+Package.json--> this contains dependencies and dev dependencies that are nothing but libraries or modules that 
+help angular to work all the package will get installed in nodemodules folder
+src--> In src main.ts this is the file where the execution of project  starts in main.ts we boot strap the AppModule
+In AppModule we bootstrap AppComponent
+
+=======================================
+Component-->is made up of three main parts, it is a view that controls the screen
+Template-->is nothing but a view and is in HTML
+class-->code that supports the view and written in typescript(ts) and contains data properties and methods
+metadata-->information and decleared using a decorator and is used to tell the class whether it is a plain class or a component
+ng g c component name // this is used to generate a new component
+
+when ever we create a new component we import that component in app.module.ts and add in the declarations array
+the declarations array contains all the components used by the application
+After creating a new component we also have the add the component selector in the app.component.html
+The selector in component can be used by default way or by making the selector as class i.e
+selector:'.app-test' and using this class we write a div and in that div we mention this class i.e
+<div class="app-test"></div>
+third method is that we can keep the selector in square brackets and give as a attribute to the div i.e
+selector: '[app-test]' and <div app-test></div>
+
+In template instead of writing templateURL and giving the html file name there we can also write template and just give the html code there
+this is called inline template and to write multiple lines of html we use backticks `` instaed of '' this
+
+
+Directives:
+Angular templates are dynamic
+Directives give instrcutions to angular on how to render the templates to DOM
+A directive can e defined by @directive
+component is a special kind of directive with its own template
+two types of directives
+structural directives
+this allows to alter the layout to add, remove and replace elments in DOM, we use * for defining the directive
+Eg: NgIf, NgFor, NgSwitch,
+ 
+
+
+==================================================
+interpolation:
+interpolation can be done by using {{}} double curly braces and it can perform operations like adding numbers, concatinating strings
+and variables, methods that are declared in the class can be also interpolated, javaScript methods can also be used
+Assigning cannot be done using binding in interplation, global js variables can't be read(window.location.href)
+
+in Class:
+greetUser(){
+	return "Hello"+this.name;
+}
+In template:
+<h2>{{greetUser()}}</h2>
+ =======================================
+Data Binding:
+Mechanism for coordinating between the
+template-->DOM
+component-->property
+Data flowing from component to template
+Events generated by user interaction flowing to component
+Binding targets are the properties that are declared on the left side of the binding declaration([...], (...), [(..)])
+Right side are the binding sources ("..")
+Target porperties must be explicitly marked as Inout or output properties using decorators:
+@Input() dish:Dish;
+@Output() deleteDish = new EventEmmiter<Dish>();
+
+==================================================
+property Binding:one way data binding
+Attribute and properties are not the same, attributes are actually html and property is DOM(Document Object Model)
+Attribute value cannot change where Dom value can change
+$0.getattribute() and $0.value are used to get attribute and property
+in class:
+public myId="testId";
+in template:
+<input [id]="myId" or id={{myId}} type="text" value="name"> //in this we have binded the property
+ ==================================================
+ Two way data binding
+[(target)]="expression" eg:[(ngModel)]="dish.name"
+[()]  banana in a box
+
+=================================================
+ Event binding:
+ this is a one way data binding from view target to data source
+ (target)="statement" eg: (click)="onSelect(dish)"
+
+
+ class binding:
+In class binding we mention the classes in the styles and we can directly use in html elments or we can use by declearing a variable 
+in class by assigning the one of the style classes and we use that in html by [] square brackets
+<h2 [class]="successclass"> where success class is a varible in the class and is assigned to text-success of styles class
+public successClass= "text-success"
+For boolean we write public hasError=true and in template <h2 [class.text-danger]="hasError"
+To use multiple classes ata time we use ngClass directive, we decleare a object in compoennt class and we use that object in template
+public messageClasses = {"text-success": !this.hasError, "text-danger": this.hasError, "text-special":this.isspecial} and in template
+<h2 [ngClass]="messageClasses">asdf</h2> inthis code it checks what are true and what are false and that style according ti that will 
+be applied.
+
+=================================================
+Style binding:
+this is similar to class binding we write inline styles in the template
+<h2 [style.color="'orange'""]>style </h2>
+<h2 [style.color="hasError: 'red': 'green'"]>
+
+
+=====================================================================
+Design patterns:
+A design pattern is a well-documented solution to a recurring problem
+software design patterns in particular are a reusable solution to commonly occurring problems that are solved in software
+
+MVC framework:
+Model: In the MVC framework, the model manages the behavior and data of the application domain. And the model responds to
+  requests for information about its current state.
+ View:   The view itself is concern with presenting the information to the users in a user interface element in 
+ such a way that it facilitates both the presentation of information to the user and also enables the user
+ to interact with the application.
+Controller:   The job of the controller is to receive information from the view. So any user interaction 
+that is performed will be captured and then passed onto the controller in order to act on these user interactions. 
+And it is the job of the controller then to initiate a change of the state of the model, if it is required in this
+ particular situation. So the controller will appropriately cause the change of the state of the model
+==================================================================
+Angular services:
+In angular component classes should be kept lean and should only focus on presenting data so that
+fetching data from server, user input validation and logging should be delegated to a service.
+
+=====================================================================
+Dependency injection:
+This is a software design pattern
+Dependency: An object that can be used(a service)
+Injection: passing the dependency object to a dependent object so that it can use it.
+Three ways to get hold of the dependencies:
+create dependencies using the new operator
+Look up dependencies using a global variable
+have dependencies passed to it where ever needed(injecting dependencies)
+Third option is most flexible.
+
+DI involves 4 roles:
+1. The service
+2. The client
+3. the interfaces
+4. The injector
+
+creating services:
+ng generate service nsme-of-service
+when ever we create a particular service we have to configure it and then we have to import that into
+app.module.ts and we have declare the service in the providers
+When we want to use the service in a particular component first we have to import the service into
+the component and after that we should create a method in the constructor parathesis of the service class type
+i.e constructor(private dishService: DishService){} In this DishService is a service class and dishService is a method,
+this creates a dishService object and that is used the component
+and after that in ngOnInit we use this to fetch the data by writing
+this.dishes = this.dishService.getdishes();  getDishes is a method in DishService and used to fetch the data of
+dishes and we write this in ngonInit because this method gets executed when the component is insantiated or created
+
+
+we use font-awesome in this to install
+npm install font-awesome@4.7.0 --save
+Then after we need to integrate font-awesome into angular.
+Then, add a new file named _variables.scss in the src folder 
+$fa-font-path : '../node_modules/font-awesome/fonts';
+
+====================================================
+
+Angular Routing:
+angular router:
+this enables navigation among views
+Angular Router leverages the history manipulation to modify the browser's URL without triggering a page refresh.
+
+Some Angular Router terms:
+Router Module:
+->Routes  -> {path:"/home", component:HomeComponent}
+in template of app component we place <router-outlet></router-outlet>	
+routerLink  -> <a routerLink="/menu">Menu</a>
+
+to use routing in angular we have to a add routing module we can do that by the following code
+ng generate module app-routing
+in app-routing module we import RouterModule and routes from @angular/router
+we create a new file routes.ts in which we import the Routes from @angular/router and all the components we required
+and we declear a const routes in which we mention and path and the component to be rendered
+import the new created file routes into app-routing module and in NgModule we make the use of
+imported routes 'RouterModule.forRoot(routes)'
+we write <router-outlet></router-outlet> in app compoent html
+
+
+
+HTML5 history API:
+Gives developer the ability to modify a websites without a full page refresh
+pushstate():- add history entry
+replacestate():- modify history entry
+configrue <base href="/">
+
+
+
+Single page Applications:
+In traditional websites first the request goes from the browser to server and server sends back the data
+and for the next request the server should send the whole page including some of the same information present in 
+previous page which increases the turn around time for loading the page.
+
+In single page Applications the first request for web application and server sends web app and assets when user clicks on a
+link and create a new request this time only the required data is sent in JSON/XML form so that the turn around time required 
+will be reduced.
+ Single Page Application is a web application or a website that fits into a single page. You don't need to reload the entire 
+ page every single time a user interacts with the application. The UX is more like a desktop or a native application. 
+ Most of the resources required for your application are downloaded at the first instance itself, with the first page load.	
+
+ Challenges of Single Page Applications:
+ search engine optimization
+ maintaining history
+ partitioning the responsiblity between client and server
+ analytics
+ Speeding up the intial page load
+
+ Angular Router: parameters
+
+ paths specified as a URL
+ paths can also carry parameter values:
+ Route parameter specified in the path defintion as a token
+eg: path:'dishdetail/id' where id is a token
+ Route parameters can be specified using a link parameter	
+array while	specifiyng the link
+– e.g.,	  <a *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
+
+ActivatedRoute Service:
+Router service that	provides useful	information	about the routes, including:
+– url: An Observable of	the	route path(s), represented as an array of strings	for	each part of the route path.
+– params: An Observable that contains the required and optional parameters specific	to the route
+– queryParams: An Observable that contains the query parameters available to all routes.
+
+====================================================================
+Dialogs:
+triggering the dialog
+creating dialog component
+ng g c login
+in order to turn a Angular component into a dialog component, 
+we also need to declare that component as an entry component along with decleartions.
+we should also import MatDialog and MatDialogRef into the component we want to make it a dialog
+In constructor we create dialog variable of MatDialog 
+
+Angular Template driven forms
+Forms:
+cohesive, effective and compelling data entry experience for users.
+Extensively used in websites and web applications for :
+Login
+submit information(placing orders, booking the ticket etc)
+ANgular forms use angular framework for :
+Two-way data binding
+change tracking,form validation and error handling
+
+HTML forms:
+Form tag: <form></form>
+form elements:<input>
+type: text, password, submit, radio, checkbox, button, color, date, datetime, email, month, number, range, search, tel, time, url, week
+, <textarea>, <button>, <select>
+
+Angular Template-driven Forms:
+Use Angular template syntax to construct a form using the form elements
+Bind Angular form-specific directives with form elements
+
+Forms and Two-way Data Binding
+• Angular’s two-way data binding makes it straightforward to work with forms:
+– Define a JavaScript object in your class
+– Use ngModel directive on form fields
+• Banana in a box [()]
+
+Angular Template-driven Form validation:
+Turn off HTML5 form validation
+using <form novalidate>, so that angular takes the responsibility and does that
+Template reference Variable:
+<form novalidate #loginForm="ngForm" this enables us to track the state of form
+
+
+
+Reactive forms:
+Explicit management	of	data flowing between an	non-UI data model and a	UI-oriented	form model
+– Create a tree	of Angular form	control	objects	in the component class
+– Bind them	to the native form control elements in the template
+– Component class has immediate access to both data	model and the form control structure
+• push data	model values to form controls and pull user-changed	values back	out
+• Reactive patterns, testing and validation
+Template driven forms are hard to test and reactive forms makes easy
+Advantages of Reactive Forms:
+Values and Validity	updates	are	always synchronous
+Easier	to	unit	test
+Reactive Forms are controlled through classes:
+• FormControl: powers individual form control, tracks the value and	validation status
+• FormGroup: group of FormControl instances
+• AbstractControl: abstract	base class for the form control	classses
+• FormArray: numerically indexed array of AbstractControl instances
+
+Form Builder:
+Import FormBuilder from @angular/forms
+• Use FormBuilder to construct the reactive form
+– reduce repetition and clutter
+this.feedbackForm =	this.fb.group({
+firstname:	'',
+lastname:	'',
+telnum:	'',
+email:	'',
+agree:	false,
+contacttype:	'None',
+message:	'’
+});
+
+Populate Form Model:
+• Form model and Data Model are separate
+• User changes	flow from the DOM elements to the form model
+• Two methods to populate the form model from the data model:
+– setValue(): assign every form	control	value at once
+– patchValue():	update	specific	form	control	value
+
+Angular Reactive form validation
+
+=================================================================================
+Promises:
+Promise	is a mechanism that	supports asynchronous computation
+• Proxy	for	a value not necessarily known when the promise is created:
+– It represents	a value	that may be available now, or in the future, or	never
+
+
+=============================================================================
+ Angular and Rxjs:
+ The Observer Pattern
+• Software-engineering pattern
+– Gang of four
+• Observable (subject) tracks observers
+ we will declare some classes as observable and observers observe them
+ observers should be subscribed to the observable 
+• Observable notifies observers of state changes
+
+Why Observables?
+• Streams
+• Can be unsubscribed
+• Lazy, or cold until some observer does a .subscribe()
+• Canceling and retrial straightforward
+
+Reactive Programming
+• Data flows: how does data flow through your application?
+• Propagation of change through your application
+• Built around “streams”
+• Functional Reactive Programming
+– Functional + Reactive
+
+RxJS
+• Library for composing asynchronous and event-based programs by using observable sequences.
+• Provides:
+– one core type, the Observable,
+– satellite types (Observer, Schedulers, Subjects), and
+– operators inspired by Array#extras (map, filter, reduce, every, etc)
+– to allow handling asynchronous events as collections.
+• Used for observables support in Angular
+
+Observables, Operators and Marble Diagrams:
+Observable emit the values, errors also may occur  and it should be handled appropriately sometimes and after completion of the observable
+we can assign operators and we can also get another observable from one but second one is dependent on first
+
+Angular and RxJS
+• Observables all over Angular:
+– Forms
+– HTTP
+– AsyncPipe
+– Change detection
+
+Params observable that comes from the activated routes of the router module
+
+
+
+=======================================================================================
+
+Networking essentials:
+Client and Server
+• Web applications are not stand-alone
+• Many of them have	a “Cloud” backend
+
+The Networking Alphabet soup:
+HTTP: Hypertext Transfer Protocol
+URL: Uniform Resource Locator
+SOAP: Simple Object Access Protocol
+REST: Representational state transfer
+JSON: JavaScript object Notation
+XML: Extensible Markup Language 
+GET, POST, PUT, DELETE
+
+
+Client-Server Communication
+• Network operations cause unexpected delays
+• You need to write	applications recognizing the asynchronous nature of communication
+– Data is not instantaneously available
+
+Hypertext	Transfer	Protocol	(HTTP)
+• A	client-server	
+communications	protocol
+• Allows	retrieving	inter- linked	text	documents	
+(hypertext)	
+– World	Wide	Web.
+• HTTP	Verbs
+– HEAD
+- GET
+– POST
+– PUT
+– DELETE
+– TRACE
+– OPTIONS
+– CONNECT
+
+HTTP request
+HTTP response:
+Server may send	back data in a specific format:
+– eXtensible Markup	Language (XML)
+– Javascript Object	Notation (JSON)
+
+Javascript Object	Notation	(JSON)
+• http://www.json.org
+• Lightweight data interchange format
+• Language independent*
+• Self-describing and easy to understand
+
+Data structured	as:
+– A	collection of name/value pairs
+– Ordered list of values
+
+Setting up a Server using json-server:
+we have to install Json-server is a node module in order to use
+     npm install json-server -g
+
+and then we have to go json-server folder we have created in a particular location
+
+to run the json server we use  " json-server --watch db.json -d 2000  "(-d is delay and the delay is 2seconds)     
+after this we find some web links which serve the static data present in json will be served
+
+
+===================================================================
+Angular HTTP client:
+Most modern browsers support two different APIs for making HTTP requests: XMLHttpRequest (XHR), or the fetch() API
+• Angular supports communication with servers using the HTTP protocol via the browser’s API
+– HttpClientModule
+• Operation is asynchronous in nature
+• Always delegate data access to a supporting service class
+– Components make use of the services
+
+The HttpClient
+• The HttpClient returns an Observable:
+http.get(<URL>)
+.subscribe(. . .);
+• Methods:
+http.get(), http.put(), http.post(), http.delete(),
+http.jsonp(), http.head() . . .
+
+HTTP Response
+• The Angular HTTP Client’s get() method parses the server’s JSON response into an anonymous object
+• We can tell the HTTP client the “shape” of the object so that the output from the get() can be consumed easily
+by the application
+– e.g., this.http.get<Dish>( . . .)
+• If required you can get access to the whole response
+
+Error Handling
+• Error handling done through catch()
+http.get(<URL>)
+.pipe(catchError( . . . ))
+• Process the error in the service and return an error message string to the component through Observable’s throwError() method
+• Component that subscribes should then decide how to handle error
+.subscribe(data => . . .,
+error => . . . );
+
+===========================================================
+Representational State Transfer (REST): Briefing
+
+Web	Services • A system	designed to	support	interoperability of systems	connected over	a network
+– Service oriented architecture (SOA)
+– A	standardized way of	integrating	web-based applications using open standards operating over the	Internet
+• Two common approaches used in practice:
+– SOAP (Simple	Object Access Protocol)	based	services
+• Uses WSDL (Web Services Description	Language)
+• XML based
+– REST (Representational State Transfer)
+• Use Web standards
+• Exchange of data using either XML	or JSON
+• Simpler compared to	SOAP, WSDL etc.
+
+Representational State Transfer (REST):
+• A	style of software architecture for	distributed	
+hypermedia systems such as	the	World Wide Web.
+• Introduced in the	doctoral dissertation of Roy Fieldin 
+– One of the principal authors of the HTTP specification.	
+• A	collection of network architecture principles which	
+outline	how	resources are defined and addressed
+
+Representational State Transfer (REST)
+• Four basic design principles:
+– Use HTTP methods explicitly
+– Be stateless
+– Expose directory structure-like URIs
+– Transfer using XML, JavaScript Object Notation (JSON), or both
+
+
+REST and HTTP:
+• The motivation for	REST was	to	capture	the	characteristics	of	the	
+Web	that made	the	Web	successful
+– URI (Uniform Resource Indicator)	Addressable	resources
+– HTTP Protocol 
+– Make a Request	– Receive Response – Display  Response
+• Exploits	the	use	of	the	HTTP protocol beyond HTTP POST and	HTTP GET
+– HTTP PUT, HTTP DELETE
+– Preserve Idempotence
+
+
+REST Concepts:
+Nouns (Resources)
+unconstrained
+i.e., http://www.conFusion.food/dishes/123
+
+Verbs 
+constrained
+i.e., GET, PUT, POST, DELETE
+
+Representations:
+constrained
+i.e., XML, JSON
+
+Resources
+• The	key	abstraction	of	information	in	REST	is	a	resource.
+• A	resource	is	a	conceptual	mapping	to	a	set	of	entities
+– Any	information	that	can	be	named	can	be	a	resource:	a	document	or	image,	a	
+temporal	service	(e.g.	"today's	weather	in	Hong	Kong"),	a	collection	of	other	
+resources,	a	non-virtual	object	(e.g.	a	person),	and	so	on
+• Represented	with	a	global	identifier	(URI	in	HTTP)
+– http://www.conFusion.food/dishes/123
+
+
+Naming	Resources
+• REST	uses	URI	to	identify	resources
+– http://www.conFusion.food/dishes/
+– http://www.conFusion.food/dishes/123
+– http://www.conFusion.food/promotions/
+– http://www.conFusion.food/leadership/
+– http://www.conFusion.food/leadership/456
+• As	you	traverse	the	path	from	more	generic	to	more	specific,	you	
+are	navigating	the	data
+• Directory	structure	to	identify	resources
+
+
+Verbs
+• Represent	the	actions	to	be	performed	on	resources
+– Corresponding	to	the	CRUD	operations
+• HTTP	GET	<- -> READ
+• HTTP	POST	<- -> CREATE
+• HTTP	PUT	<- -> UPDATE
+• HTTP	DELETE	<- -> DELETE
+
+HTTP	GET
+• Used	by	clients	to	request	for	information
+• Issuing	a	GET	request	transfers	the	data	from	the	
+server	to	the	client	in	some	representation	(XML,	
+JSON)
+– GET	http://www.conFusion.food/dishes/
+• Retrieve	all	dishes
+– GET	http://www.conFusion.food/dishes/452
+• Retrieve	information	about	the	specific	dish
+
+HTTP	PUT,	HTTP	POST,	HTTP	DELETE • HTTP	POST	creates	a	resource
+– POST	http://www.conFusion.food/feedback/		
+• Content:	{first	name,	last	name,	email,	comment	etc.}
+• Creates	a	new	feedback	with	given	properties
+• HTTP	PUT	updates	a	resource
+– PUT	http://www.conFusion.food/dishes/123
+• Content:	{name,	image,	description,	comments	…}
+• Updates	the	information	about	the	dish,	e.g.,	comments
+• HTTP	DELETE	removes	the	resource	identified	by	the	URI
+– DELETE	http://www.conFusion.food/dishes/456
+• Delete	the	specified	dish
+
+
+Representations:
+• How	data	is	represented	or	returned	to	the	client	for	
+presentation
+• Two	main	formats:
+– JavaScript	Object	Notation	(JSON)
+– XML
+• It	is	common	to	have	multiple	representations	of	the	same	
+data
+– Client	can	request	the	data	in	a	specific	format	if	supported
+
+Stateless	Server:
+• Server	side	should	not	track	the	client	state:
+– Every	request	is	a	new	request	from	the	client
+• Client	side	should	track	its	own	state:
+– E.g.,	using	cookies,	client	side	database
+– Every	request	must	include	sufficient	information	for	
+server	to	serve	up	the	requested	information
+– Client-side	MVC	setup
+
+Angular HTTP client exercise:
+import { HttpClientModule } from '@angular/common/http'
+
+
+Angular HTTP client Error handling
+
+
+Saving changes to server
+
+========================================================================
+
+Angular attribute directives:
+Used as attributes for elements i 	the	template
+• Listen to	and	modify the	behavior of other HTML elements, attributes, properties, and components
+• Built-in attribute directives: NgStyle, NgModel, NgClass
+• Some of the other Angular modules	like the FormsModule and RouterModule define their own attribute directives
+
+Custom Directives
+• Can create our	own	custom directives
+• Directive	imported from @angular/core
+– @Directive decorator
+• ElementRef also imported from  @angular/core
+– Injected into the	directive’s	constructor	so that the code can access the	DOM	element
+
+==============================================================================
+
+Angular animations:
+Build animations using Angular	with the	same kind of native	performance	a  	pure CSS	animations
+• Built on top	of the	Web	Animations	API
+– For browsers not supporting the  Web	Animations API, need to use	a polyfill web-animations.min.js
+• Tightly integrate the	animation logic	with the	rest of	the	application	code
+
+Animations
+• Animations built around transitions	of an element	between	states driven by a model attribute
+• Defined inside the	@Component metadata
+• Need	to import some animation-specific imports	and	
+functions:
+– BrowserAnimationsModule
+– trigger, state, style, animate, transition from	
+@angular/animations
+
+States	and	Transitions
+• ”void” state: element	is not	attached to a view
+• ”*” any	state 	wildcard
+• void =>	*is	equivalent	to	:enter
+• *	=> void is	equivalent	to	:leav 
